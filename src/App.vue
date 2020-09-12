@@ -1,19 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <site-header :title="formattedTitle"></site-header>
+    <button @click="changeTitle">Change title</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SiteHeader from "./components/SiteHeader";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    SiteHeader,
+  },
+  data: function() {
+    return {
+      title: "Inny tytuł"
+    };
+  },
+  computed: {
+    formattedTitle() {
+      return this.title + "***";
+    }
+  },
+  methods: {
+    changeTitle() {
+      this.title = "Tytuł po zmianie";
+    },
+  },
+};
 </script>
 
 <style>
