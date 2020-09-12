@@ -1,14 +1,18 @@
 <template>
   <div>
-    <h1>{{title}}</h1>
-    <router-link to="/my-trips">My Trips</router-link>
-    <router-link to="/add-trip">Add Trip</router-link>
+    <b-navbar type="dark" variant="info">
+      <b-navbar-brand href="#">Trip Planner</b-navbar-brand>
+      <b-navbar-nav>
+        <b-nav-item to="/my-trips">My Trips</b-nav-item>
+        <b-nav-item to="/add-trip">Add Trip</b-nav-item>
+      </b-navbar-nav>
+    </b-navbar>
   </div>
 </template>
 
 <script>
 export default {
   name: "SiteHeader",
-  props: ["title"]
+  props: ["title"],
 };
 </script>
