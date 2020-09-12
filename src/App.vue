@@ -2,6 +2,7 @@
   <div id="app">
     <site-header :title="formattedTitle"></site-header>
     <button @click="changeTitle">Change title</button>
+    <router-view></router-view>
   </div>
 </template>
 
